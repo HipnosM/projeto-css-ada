@@ -11,6 +11,9 @@ body {
 
 :root {
     font-size: 62.5%;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.15);
+    --border-rad: 1.2rem;
+    --pink: #FF5678;
 }
 
 .content {
@@ -39,15 +42,26 @@ aside h1 {
 
 aside h1 span,
 main h2 span {
-    color: #FF5678;
+    color: var(--pink);
 }
 
 main {
     width: 60rem;
     height: 52rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.15);
+    border: var(--border);
     padding: 4.4rem 5.7rem;
-    border-radius: 1.2rem;
+    border-radius: var(--border-rad);
+    position: relative;
+}
+
+main header {
+    display: flex;
+    gap: 0 1.8rem;
+    align-items: center;
+}
+main header i {
+    color: var(--pink);
+    font-size: 2.4rem;
 }
 
 main h2 {
@@ -66,7 +80,7 @@ main .botoes a {
     height: 5.5rem;
     font-size: 2.4rem;
     background-color: #35E6E9;
-    border-radius: 1.2rem;
+    border-radius: var(--border-rad);
     text-decoration: none;
     
     display: flex;
@@ -91,4 +105,62 @@ main footer a {
     text-align: center;
     color: black;
     font-weight: 500;
+}
+
+main form {
+    margin-top: 1.6rem;
+}
+
+main form label {
+    font-weight: 400;
+    font-size: 1.6rem;
+    /* margin-bottom: 1rem; */
+    margin: 1rem 0;
+    display: block;
+}
+
+main form :is(input, select) {
+    width: 48.9rem;
+    height: 5.5rem;
+    border-radius: var(--border-rad);
+    border: 0.1rem;
+    background-color: white;
+    border: var(--border);
+    padding: 0 1.8rem;
+}
+
+main form select {
+    appearance: none;
+}
+
+main form .select-div {
+    position: relative;
+}
+
+main form .select-div::after {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    color: #35E6E9;
+    font-size: 2.2rem;
+    
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    z-index: 1;
+}
+
+main form .points {
+    position: relative;
+}
+
+main form input + button {
+    position: absolute;
+    right: -3.7rem;
+    top: calc(50% + 0.12rem);
+    background-color: transparent;
+    border: none;
+    color: #35E6E9;
+    font-size: 2.4rem;
+    cursor: pointer;
 }
